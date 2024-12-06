@@ -1,0 +1,19 @@
+include ../utils/mixins
+
+block variables
+
+doctype html
+html(lang="en")
+  head
+    title #{title}
+    link(rel="stylesheet" href="styles.css")
+    meta(name="description", content = description)
+  body(class=bodyClass)
+    .wrapper 
+      include ../includes/modules/header.pug
+      .content-wrapper 
+        block content
+      include ../includes/modules/footer.pug
+    block script
+
+

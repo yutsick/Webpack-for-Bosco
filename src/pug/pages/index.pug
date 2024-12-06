@@ -1,0 +1,17 @@
+extends ../layout/main.pug
+
+block variables 
+  - var title = 'Home Garbuz'
+  - var description = 'This is the home page'
+  - var bodyClass = 'home'
+
+block content
+  section   
+    .container 
+      h1 Home Page
+      p Welcome to the home page
+      h2 TEST
+  +section('Section Title', 'Section Description')
+  +section('Section2 Title2', 'Section2 Description2')
+  +section('Section3 Title3', 'Section3 Description3')
+  +section('Section4 Title4', 'Section4 Description4')
