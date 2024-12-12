@@ -5,6 +5,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { GenerateSW } from 'workbox-webpack-plugin';
 import fastGlob from 'fast-glob';
 import process from 'node:process';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -17,17 +19,33 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'), // Куди зберігати результат
     filename: '[name].js', // Це для JS, якщо він потрібен
+    clean: true,
   },
+  cache: false,
   mode: isProduction ? 'production' : 'development',
   devtool: 'source-map',
   devServer: {
     open: true,
     host: 'localhost',
     hot: true,
-    port: 8080,
+    port: 3000,
     watchFiles: ['./src/**/*'],
+    static: {
+      directory: path.resolve('src/static'), // Serve files from the build folder
+    },
   },
   plugins: [
+    
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve('src/static/'), // Source folder for static files
+          to: path.resolve('dist/static'), // Destination in the build folder
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
+
     // Перевіряємо, чи правильно підключаємо HtmlWebpackPlugin для кожного шаблону
     ...pages.map(
       (page) =>
