@@ -1,1 +1,0 @@
-{"version":3,"file":"styles.css","mappings":"AAGA,GACI,SAFE,C","sources":["webpack://my-webpack-project/./src/scss/main.scss"],"sourcesContent":["\r\n$blue: #0000ff;\r\n$red: #ff0000;\r\nh2{\r\n    color: $red;\r\n}"],"names":[],"sourceRoot":""}

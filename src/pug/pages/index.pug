@@ -15,3 +15,15 @@ block content
   +section('Section2 Title2', 'Section2 Description2')
   +section('Section3 Title3', 'Section3 Description3')
   +section('Section4 Title4', 'Section4 Description4')
+
+  .cards
+    each card in require('../../data/data.json')
+      .card
+        img.avatar(src=card.avatar alt="User Avatar")
+        .details
+          h2.name= card.name
+          p.position= card.position
+          p.feedback= card.feedback
+          p.date= card.date
+          p.rating Rating: #{card.rating}
+        img.emoticon(src=`/assets/images/${card.emoticon}.png` alt="Emoticon")

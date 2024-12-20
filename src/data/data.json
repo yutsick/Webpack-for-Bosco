@@ -1,0 +1,29 @@
+[
+  {
+    "avatar": "https://via.placeholder.com/100",
+    "name": "John Doe",
+    "position": "Software Engineer",
+    "feedback": "Great service and support!",
+    "date": "2024-12-12",
+    "rating": 5,
+    "emoticon": "happy"
+  },
+  {
+    "avatar": "https://via.placeholder.com/100",
+    "name": "Jane Smith",
+    "position": "Product Manager",
+    "feedback": "Helpful and reliable!",
+    "date": "2024-12-10",
+    "rating": 4,
+    "emoticon": "neutral"
+  },
+  {
+    "avatar": "https://via.placeholder.com/100",
+    "name": "Alice Brown",
+    "position": "UX Designer",
+    "feedback": "Could improve on delivery speed.",
+    "date": "2024-12-08",
+    "rating": 3,
+    "emoticon": "sad"
+  }
+]
